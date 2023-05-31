@@ -1,7 +1,5 @@
 package nextstep.qna.domain;
 
-import nextstep.users.domain.NsUser;
-
 public class QuestionContent {
 	private String title;
 
@@ -11,11 +9,6 @@ public class QuestionContent {
 	public QuestionContent(String title, String contents) {
 		this.title = title;
 		this.contents = contents;
-	}
-
-	@Override
-	public String toString() {
-		return "QuestionContent [title=" + title + ", contents=" + contents + "]";
 	}
 
 	@Override
@@ -29,5 +22,13 @@ public class QuestionContent {
 	@Override
 	public int hashCode() {
 		return title.hashCode() + contents.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return "QuestionContent{" +
+			"title='" + title + '\'' +
+			", contents='" + contents + '\'' +
+			'}';
 	}
 }

@@ -56,11 +56,11 @@ public class Question extends BaseEntity {
     }
 
     public Optional<DeleteHistory> deleteHistory() {
-        if (this.isDeleted()) {
-            return Optional.of(new DeleteHistory(ContentType.QUESTION, id, writer, LocalDateTime.now()));
+        if (!isDeleted()) {
+            return Optional.empty();
         }
 
-        return Optional.empty();
+        return Optional.of(new DeleteHistory(ContentType.QUESTION, id, writer, LocalDateTime.now()));
     }
 
     public DeleteHistories deleteHistoriesWithQnA() {

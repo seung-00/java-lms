@@ -74,7 +74,7 @@ public class Answer extends BaseEntity {
 
     public Optional<DeleteHistory> deleteHistory() {
         if (!isDeleted()) {
-            return null;
+            return Optional.empty();
         }
 
         return Optional.of(new DeleteHistory(ContentType.ANSWER, id, writer, LocalDateTime.now()));
